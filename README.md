@@ -1,36 +1,46 @@
-# Boilerplate: Fullstack with Sass
+# Grow-grub 🌱
 
-## Setup
+## Overview
 
-### What's included
+Grow-grub is a full-stack companion app for gardeners that was made as my final group project at Dev Academy. It was built over the course a week in a team of six other students. 
 
-This repo includes:
+The application allows users to plan their garden and track the progress of their plants. Users can get a wealth of information about their plants such as care instructions and advice on when to sow and harvest. The application also tracks the watering history of each plant and generates a new watering task depending on the current date, when the plant was last watered, and the watering frequency of the plant. 
 
-* a single, simple API endpoint (`/api/v1/fruits`)
-* frontend routing via react-router
-* an auth0 setup waiting to be configured
-* an example database module (`server/db/fruits.js`)
-* an API client module (`client/apis/fruits.js`)
-* configuration for Vitest and testing library
-* configuration for server-side debugging in VS Code
-* configuration for preprocessing css with tailwind support
+The application is currently functional and I am currently working on hosting and deploying it. However, we were coding right up until code freeze and haven't touched the codebase since, so there are lots of comments and other errata that still need to be cleaned up!
 
-### Installation
+## My technical contribution
 
-#### **From the Github UI**
+We started work on Grow-grub after I had worked on [TableTalk](https://github.com/cburkeg/TableTalk) (a front-end-heavy project), so I wanted to further develop my skills on the back-end during this project. 
 
-See the instructions [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) to use Github's feature to create a new repo from a template.
+### Back-end
+#### I worked on the following [routes](server/routes/growGrub.ts):
 
-#### **From the command line**
+- [Saving a new garden](server/routes/growGrub.ts#L195) (please note that didn't write lines relating to saving plants, e.g. line 204, lines 206 - 211)
+- [Updating an existing garden](server/routes/growGrub.ts#L233) (please note that I didn't write line 255 onwards)
+- [Refreshing and retrieving user tasks](server/routes/growGrub.ts#L313)
+- [Completing a task](server/routes/growGrub.ts#L344)
 
-```
-git clone https://github.com/dev-academy-challenges/boilerplate-fullstack [your-project-name]
-cd [your-project-name]
-npm install # to install dependencies
-npm run dev # to start the dev server
-```
+#### I also worked on the following [database functions](server/db/growGrub.ts):
 
-You can find the server running on [http://localhost:3000](http://localhost:3000) and the client running on [http://localhost:5173](http://localhost:5173).
+- [saveNewGarden](server/db/growGrub.ts#L101)
+- [saveNewPlots](server/db/growGrub.ts#L113)
+- [updateGardenLayout](server/db/growGrub.ts#L135)
+- [getPlotsPlantsJoinByAuth](server/db/growGrub.ts#L385)
+- [getUncompletedTasksByAuth](server/db/growGrub.ts#L405)
+- [updateTasks](server/db/growGrub.ts#L434)
+- [createTasks](server/db/growGrub.ts#L450)
+- [getUpdatedTasksByAuth](server/db/growGrub.ts#L416)
+- [completeTask](server/db/growGrub.ts#L457)
 
----
-[Provide feedback on this repo](https://docs.google.com/forms/d/e/1FAIpQLSfw4FGdWkLwMLlUaNQ8FtP2CTJdGDUv6Xoxrh19zIrJSkvT4Q/viewform?usp=pp_url&entry.1958421517=boilerplate-fullstack)
+#### Finally, I wrote the following [helper functions](server/db/helperFunctions.tsx):
+- [differentiatePlots](server/db/helperFunctions.tsx#L10)
+- [refreshTasks](server/db/helperFunctions.tsx#L75)
+ 
+
+### Front-end
+
+I helped code the [GardenGrid](client/components/GardenGrid.tsx) and [GardenForm](client/components/GardenGrid.tsx) components along with the [GardenView](client/pages/GardenView.tsx) page.
+
+## Other contributions
+
+I was our team's scrum facilitator. It was my responsibility to organise our stand-ups, make sure our group project was tracking smoothly, and resolve roadblocks from the team's workflow. I also helped facilitate our retro at the end of the week-long project. 
