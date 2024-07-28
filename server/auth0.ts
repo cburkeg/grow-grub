@@ -5,8 +5,8 @@ import { JwtPayload } from 'jsonwebtoken'
 import jwks from 'jwks-rsa'
 
 // TODO: set the domain and audience (API Identifier)
-const domain = 'https://whai-2024-zachary.us.auth0.com'
-const audience = 'https://grow-grub/api'
+const domain = 'https://dev-cburkeg.au.auth0.com'
+const audience = 'https://growgrub/api'
 
 const checkJwt = jwt({
   secret: jwks.expressJwtSecret({
