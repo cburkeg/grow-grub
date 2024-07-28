@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
      * TODO: replace domain, clientId, and audience
      */
     <Auth0Provider
-      domain="dev-cburkeg.au.auth0.com"
+      domain="https://dev-cburkeg.au.auth0.com"
       clientId="jETjJ2AjpenHnXDs9to0JuGH8GDblQHX"
       authorizationParams={{
         redirect_uri: window.location.origin,
